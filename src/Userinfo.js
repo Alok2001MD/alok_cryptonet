@@ -10,7 +10,9 @@ function Userinfo() {
     const fetchData = async () => { 
       const response = await axios.get("https://randomuser.me/api/?page=1&results=1&seed=abc");
       setUserData(response.data.results[0]);
+
       setShowCard(true); // Trigger animation once data is fetched
+
     };
 
     fetchData();
@@ -23,6 +25,7 @@ function Userinfo() {
           <div className="flex flex-col md:flex-row items-center p-8">
             <img src={userData.picture.large} alt="User" className="w-32 h-32 rounded-full mb-6 md:mb-0 md:mr-8" />
             <div>
+              
               <h1 className="text-3xl font-bold text-gray-800 mb-2">{userData.name.first} {userData.name.last}</h1>
               <div className="flex items-center mb-2">
                 <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-gray-600 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
