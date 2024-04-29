@@ -7,7 +7,7 @@ function Userinfo() {
   const [showCard, setShowCard] = useState(false);
 
   useEffect(() => {
-    const fetchData = async () => {
+    const fetchData = async () => { 
       const response = await axios.get("https://randomuser.me/api/?page=1&results=1&seed=abc");
       setUserData(response.data.results[0]);
       setShowCard(true); // Trigger animation once data is fetched
